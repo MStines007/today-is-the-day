@@ -1,5 +1,5 @@
 require 'open-uri'
-require 'json'
+
 
 class NYTimes
 
@@ -8,7 +8,6 @@ class NYTimes
   attr_accessor :api_call, :news_json
 
   def initialize 
-    binding.pry
     self.api_call = URL
     open_url
   end
