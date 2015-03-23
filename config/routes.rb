@@ -1,9 +1,19 @@
 Rails.application.routes.draw do
+  resources :users
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
+
+# TODO: Create RESTful routes; replace these placeholders in the Controller
+
   root 'welcome#home'
+
+  get '2ndpage' => 'users#new'
+  post '2ndpage' => 'users#create'
+
+  get 'confirmation' => 'users#show'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
