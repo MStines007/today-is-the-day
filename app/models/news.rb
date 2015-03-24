@@ -1,4 +1,5 @@
 require 'open-uri'
+require 'wikipedia'
 
 class News < ActiveRecord::Base
 
@@ -6,23 +7,23 @@ class News < ActiveRecord::Base
 
   
   def api_call
-    # type = JSON
-    
-    url = "http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=#{self.date.to_s.gsub("-","")}&end_date=#{self.date.to_s.gsub("-","")}&api-key=#{ENV['NYTIMES_KEY']}"
-    binding.pry
+    url = "http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=1952#{get_date_string}&end_date=2015#{get_date_string}&fl=headline%2Csnippet%2Cpub_date&api-key=#{ENV['NYTIMES_KEY']}"
+    # binding.pry
     response_hash = JSON.load(open(url))
   end
 
   def get_date_string
-    #{self.date.year}#{self.date.month}#{self.date.day}
-
-  end
-
-  def open_url
-    self.news_json = JSON.load(open(self.api_call))["results"]
+    self.date.to_s.gsub("-","")[4..7]
   end
 
 end
+
+
+
+# NOTE: need to make sure the news class know the user selected category. That category will be inserted into API call as search perameter.
+
+# like so...
+# "http://api.nytimes.com/svc/search/v2/articlesearch.json?q=#{INSERT CATEGORY HERE}&begin_date=19700302&end_date=19700302&fl=headline%2Csnippet%2Cpub_date&api-key=#{ENV['NYTIMES_KEY']}"
 
 
 
