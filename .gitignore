@@ -1,1 +1,4 @@
-*.env
+log/development.log
+.env
+tmp/
+db/development.sqlite3
