@@ -1,4 +1,6 @@
-log/development.log
-.env
-tmp/
+
+*.env
+x_notes/*
 db/development.sqlite3
+log/*
+tmp/*
