@@ -1,3 +1,4 @@
+
 *.env
 x_notes/*
 db/development.sqlite3
