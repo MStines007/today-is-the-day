@@ -5,15 +5,15 @@ class News < ActiveRecord::Base
 
   # URL = "http://api.nytimes.com/svc/search/v2/articlesearch.response-format?[q=search term&fq=filter-field:(filter-term)&additional-params=values]&api-key=#{ENV['NYTIMES_KEY']}"
 
-  
+  #fl=headline%2Csnippet%2Cweb_url%2Cpub_date&
   def api_call
-    url = "http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=1952#{get_date_string}&end_date=2015#{get_date_string}&fl=headline%2Csnippet%2Cpub_date&api-key=#{ENV['NYTIMES_KEY']}"
-    # binding.pry
+    url = "http://api.nytimes.com/svc/search/v2/articlesearch.json?section_name='front_page'&begin_date=#{get_date_string}&end_date=#{get_date_string}&api-key=#{ENV['NYTIMES_KEY']}"
+    binding.pry
     response_hash = JSON.load(open(url))
   end
 
   def get_date_string
-    self.date.to_s.gsub("-","")[4..7]
+    self.date.to_s.gsub("-","")[0..7]
   end
 
 end
