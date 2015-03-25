@@ -1,12 +1,15 @@
 class UsersController < ApplicationController
 
-	def new
-		@user = User.new
-		render :form
-	end
+  def new
+    @user = User.new
+    render :create
+  end
 
 	def create
-		@user = User.create(:name => params[:user][:name])
+		params.permit!
+		@user = User.new(params[:user])
+		
+
 
 #TODO: Improve logic so the flash will show up. 
 		# if @user.save

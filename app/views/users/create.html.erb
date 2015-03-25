@@ -1,0 +1,15 @@
+
+<%= form_for @user do |f| %>
+	<%= f.label :friend_name, "Friend's name:" %>
+	<%= f.text_field :friend_name, :value => "Friend's name" %>
+	<%= f.label :friend_bday, "Search for:" %>
+	<%= f.date_field :friend_bday %>
+	<%= f.submit "Submit" %>
+<% end %>
+
+<!-- 
+# form_for collage, this will be the main controller, instantiates everything; pass these as instance variables into view
+
+# landing page
+# user profile page
+news and wiki can be local variables -->

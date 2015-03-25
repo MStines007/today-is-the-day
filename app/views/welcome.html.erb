@@ -1,6 +1,14 @@
-
-<%= form_tag("/welcome", method: "get") do %>
-  <%= label_tag(:birthday, "Search for:") %>
-  <%= date_field_tag(:birthday, value = "MM/DD/YYYY") %>
-  <%= submit_tag("What's the Birthday?!") %>
+<% form_for @user  do |f| %>
+	<%= f.label :friend_name, "Friend's name:" %>
+	<%= f.text_field :friend_name, :value => "Friend's name" %>
+	<%= f.label :friend_bday, "Search for:" %>
+	<%= f.date_field :friend_bday, value = "MM/DD/YYYY" %>
+	<%= f.submit "Submit" %>
 <% end %>
+
+
+<%= #form_tag("/welcome", method: "get") do %>
+  <%= #label_tag(:birthday, "Search for:") %>
+  <%= #date_field_tag(:birthday, value = "MM/DD/YYYY") %>
+  <%= #submit_tag("What's the Birthday?!") %>
+<% #end %>
