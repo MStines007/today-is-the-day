@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
 
 # TODO: Create RESTful routes; replace these placeholders in the Controller
+  # route to report page should be get '/?/:user_id/collection_of_bday_trivia'
 
   root 'welcome#home'
 
