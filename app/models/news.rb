@@ -7,13 +7,13 @@ class News < ActiveRecord::Base
 
   
   def api_call
-    url = "http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=1952#{get_date_string}&end_date=2015#{get_date_string}&fl=headline%2Csnippet%2Cpub_date&api-key=#{ENV['NYTIMES_KEY']}"
-    # binding.pry
+    url = "http://api.nytimes.com/svc/search/v2/articlesearch.json?fq=section_name.contains:Front&begin_date=#{get_date_string}&end_date=#{get_date_string}&-war&-death&-kill&-die&-rape&api-key=#{ENV['NYTIMES_KEY']}"
+    binding.pry
     response_hash = JSON.load(open(url))
   end
 
   def get_date_string
-    self.date.to_s.gsub("-","")[4..7]
+    self.date.to_s.gsub("-","")[0..7]
   end
 
 end
