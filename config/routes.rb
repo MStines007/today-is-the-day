@@ -11,10 +11,11 @@ Rails.application.routes.draw do
 # TODO: Create RESTful routes; replace these placeholders in the Controller
   # route to report page should be get '/?/:user_id/collection_of_bday_trivia'
 
-  root 'welcome#home'
+  # get '/' => 'users#new'
+  # post '/' => 'users#create'
 
-  get '2ndpage' => 'users#new'
-  post '2ndpage' => 'users#create'
+  # get '2ndpage' => 'users#new'
+  # post '2ndpage' => 'users#create'
 
   get 'confirmation' => 'users#show'
 

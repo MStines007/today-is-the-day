@@ -13,7 +13,9 @@ class News < ActiveRecord::Base
   end
 
   def get_date_string
-    self.date.to_s.gsub("-","")[0..7]
+    # self.date.to_s.gsub("-","")[0..7]
+# TODO Where do we get the user from?!
+    @user.friend_bday.to_s.gsub("-","")[0..7]
   end
 
 end
