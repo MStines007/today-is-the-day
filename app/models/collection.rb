@@ -1,4 +1,4 @@
-class CollectionOfBdayTrivia < ActiveRecord::Base
+class Collection < ActiveRecord::Base
 
 	# Instances of this class should have instances of
 		# NewsItem

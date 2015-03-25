@@ -1,23 +1,23 @@
 Rails.application.routes.draw do
-  resources :wikis
 
-  resources :users
+  root 'collections#new'
+
+  post '/' => 'collections#create', as: :collections
+
+  resources :collections
+  
+  get '/collections/:id' => 'collections#show'
+
+  #get '/collection/id/show' => 'collections#show'
+
+
+# TODO: Create RESTful routes; replace these placeholders in the Controller
+  # route to report page should be get '/?/:user_id/collection'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-
-# TODO: Create RESTful routes; replace these placeholders in the Controller
-  # route to report page should be get '/?/:user_id/collection_of_bday_trivia'
-
-  # get '/' => 'users#new'
-  # post '/' => 'users#create'
-
-  # get '2ndpage' => 'users#new'
-  # post '2ndpage' => 'users#create'
-
-  get 'confirmation' => 'users#show'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

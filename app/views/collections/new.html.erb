@@ -1,0 +1,6 @@
+
+<%= form_for @collection do |f| %>
+	<%= f.label :date, "Search for:" %>
+	<%= f.date_field :date %>
+	<%= f.submit "Submit" %>
+<% end %>

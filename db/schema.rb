@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20150325191413) do
 
-  create_table "collection_of_bday_trivias", force: :cascade do |t|
+  create_table "collections", force: :cascade do |t|
     t.datetime "date"
   end
 
