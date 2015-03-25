@@ -5,7 +5,7 @@ class News < ActiveRecord::Base
 
   # URL = "http://api.nytimes.com/svc/search/v2/articlesearch.response-format?[q=search term&fq=filter-field:(filter-term)&additional-params=values]&api-key=#{ENV['NYTIMES_KEY']}"
 
-  
+  #fl=headline%2Csnippet%2Cweb_url%2Cpub_date&
   def api_call
     url = "http://api.nytimes.com/svc/search/v2/articlesearch.json?fq=section_name.contains:Front&begin_date=#{get_date_string}&end_date=#{get_date_string}&-war&-death&-kill&-die&-rape&api-key=#{ENV['NYTIMES_KEY']}"
     binding.pry
