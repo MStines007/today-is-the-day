@@ -1,1 +1,11 @@
 The date is: <%= @collection.date  %>
+
+<% @collection.wiki_items.each do |wiki_item| %>
+  <% 3.times do %>
+    <%= wiki_item.api_call %>
+  <%end%>
+<%end%>
+
+
+
+<%= "THE TRUTH" %>
