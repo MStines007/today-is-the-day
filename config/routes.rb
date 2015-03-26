@@ -2,10 +2,8 @@ Rails.application.routes.draw do
 
   root 'collections#new'
 
-  post '/' => 'collections#create', as: :collections
-
   resources :collections
-  
+
   get '/collections/:id' => 'collections#show'
 
   #get '/collection/id/show' => 'collections#show'

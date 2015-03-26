@@ -1,14 +1,16 @@
 require 'wikipedia'
 
 class WikiItem < ActiveRecord::Base
-  belongs_to :collection_of_bday_triva
+  belongs_to :collection
 
   attr_accessor :wiki_json
 
   def api_call
     @search_date = Wikipedia.find("#{format_date}")  
     open_url
-    binding.pry
+    random_event_item
+    # binding.pry
+
   end 
 
   def format_date
