@@ -11,10 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150326211412) do
+ActiveRecord::Schema.define(version: 20150327024940) do
 
   create_table "collections", force: :cascade do |t|
     t.datetime "date"
+  end
+
+  create_table "giphy_items", force: :cascade do |t|
+    t.datetime "date"
+    t.string   "url"
+    t.integer  "collection_id"
   end
 
   create_table "news_items", force: :cascade do |t|
