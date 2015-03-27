@@ -9,7 +9,7 @@ class Collection < ActiveRecord::Base
 	belongs_to :user
 	has_many :news_items
 	has_many :wiki_items
+  has_many :giphy_items
 	# has_many :meme_items
-
 
 end

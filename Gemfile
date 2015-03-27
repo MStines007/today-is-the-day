@@ -21,6 +21,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Wiki client
 gem'wikipedia-client', '~> 1.3.3'
 
+gem 'giphy', '~> 1.2.0'
+
 gem 'dotenv-rails', :groups => [:development, :test]
 
 # Use ActiveModel has_secure_password
