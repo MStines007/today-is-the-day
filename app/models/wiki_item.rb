@@ -105,20 +105,3 @@ end
 #     holiday_item["&ndash"]= ""
 #     holiday_item["\\\\n"]=""
 #     holiday_item.squish
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
