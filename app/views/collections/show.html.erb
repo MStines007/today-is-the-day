@@ -6,6 +6,8 @@ The date is: <%= @collection.date  %>
   <%end%>
 <%end%>
 
-
+<% @collection.news_items.each do |news_item| %>
+	<%= "#{news_item.headline}, #{news_item.snippet}, #{news_item.link}" %>
+<% end %>
 
 <%= "THE TRUTH" %>
