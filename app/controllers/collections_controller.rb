@@ -6,10 +6,12 @@ class CollectionsController < ApplicationController
 	end
 
 	def create
-		@collection = Collection.create(:date => params[:collection][:date])
-		@collection.wiki_items.build(:date => params[:collection][:date])
-		@collection.giphy_items.build(:date => params[:collection][:date])
-		@collection.news_items = NewsItem.createFromDate(params[:collection][:date])
+		date = params[:collection][:date]
+		@collection = Collection.create(:date => date)
+		@collection.wiki_items.build(:date => date)
+		@collection.giphy_items.build(:date => date)
+		binding.pry
+		@collection.news_items = NewsItem.createFromDate(date)
 
 		@collection.save
 		# binding.pry
