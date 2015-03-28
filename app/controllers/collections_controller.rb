@@ -10,12 +10,17 @@ class CollectionsController < ApplicationController
 		@collection.wiki_items.build(:date => params[:collection][:date])
 		@collection.giphy_items.build(:date => params[:collection][:date])
 		@collection.save
+
+		if @collection.save
+			CollectionMailer.gift_email.deliver_now
+		end
 		# binding.pry
 		redirect_to collection_path(@collection.id)
 	end
 
 	def show
 		@collection = Collection.find(params[:id])
+		CollectionMailer.gift_email(@collection)
 	end
 	
 end
