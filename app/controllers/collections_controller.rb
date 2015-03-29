@@ -6,7 +6,7 @@ class CollectionsController < ApplicationController
 	end
 
 	def create
-<<<<<<< HEAD
+
 		@collection = Collection.create(:date => params[:collection][:date])
 		# @collection.wiki_items.build(:date => params[:collection][:date])
 		# 
@@ -23,17 +23,16 @@ class CollectionsController < ApplicationController
 
 
 
-=======
-		date = params[:collection][:date]
+		# date = params[:collection][:date]
 
-		@collection = Collection.create(:date => date)
-		@collection.wiki_items.build(:date => date)
-		@collection.giphy_items.build(:date => date)
-		@collection.news_items = NewsItem.createFromDate(date)
->>>>>>> ba9068256d7fe10c84d9189ef38cc127bf158859
-		@collection.save
-		binding.pry
-		redirect_to collection_path(@collection.id)
+		# @collection = Collection.create(:date => date)
+		# @collection.wiki_items.build(:date => date)
+		# @collection.giphy_items.build(:date => date)
+		# @collection.news_items = NewsItem.createFromDate(date)
+
+		# @collection.save
+		# binding.pry
+		# redirect_to collection_path(@collection.id)
 	end
 
 	def show

@@ -11,11 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
+
 ActiveRecord::Schema.define(version: 20150328234258) do
-=======
-ActiveRecord::Schema.define(version: 20150328024355) do
->>>>>>> ba9068256d7fe10c84d9189ef38cc127bf158859
+
 
   create_table "collections", force: :cascade do |t|
     t.datetime "date"
