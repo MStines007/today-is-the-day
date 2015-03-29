@@ -2,11 +2,20 @@
 <br>
 The date is: <h2><%= @collection.date.to_formatted_s(:long_ordinal)[/[^,]+/]%></h2>
 <br>
-<% @collection.wiki_items.each do |wiki_item| %>
-  <% 3.times do %>
-    <p><%= wiki_item.api_call %><p>
-  <%end%>
-<%end%>
+<h4>Events</h4>
+<% @collection.wiki_event_items.each do |attr| %>
+  <%= "#{attr.event.gsub!("&ndash;",":")[0...-2]}" %><br>
+<% end %>
+<br>
+<h4>Significant Births</h4>
+<% @collection.wiki_birth_items.each do |attr| %>
+  <%= "#{attr.birth.gsub!("&ndash;",":")[0...-2]}" %><br>
+<% end %>
+<br>
+<h4>Holidays and Observances</h4>
+<% @collection.wiki_holiday_items.each do |attr| %>
+  <%= "#{attr.holiday[0...-2]}" %><br>
+<% end %>
 <br>
 
 <iframe src="//giphy.com/embed/7JsQ5EQTZlgHe?html5=true" width="480" height="270" frameBorder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
@@ -19,11 +28,16 @@ The date is: <h2><%= @collection.date.to_formatted_s(:long_ordinal)[/[^,]+/]%></
   <source src=<%= @collection.giphy_items.first.api_call %> />
 </video>
 
+
 <video autoplay loop>
   <source src=<%= @collection.giphy_items.first.api_call %> />
 </video>
 
 <iframe src="//giphy.com/embed/tnD8af8doAk1O?html5=true" width="480" height="361" frameBorder="0" webkitAllowFullScreen     mozallowfullscreen allowFullScreen></iframe>
+
+<% @collection.news_items.each do |news_item| %>
+	<%= "#{news_item.headline}, #{news_item.snippet}, #{news_item.link}" %>
+<% end %>
 
 <video autoplay loop>
   <source src=<%= @collection.giphy_items.first.api_call %> />

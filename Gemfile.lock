@@ -68,6 +68,7 @@ GEM
       execjs
     coffee-script-source (1.9.1)
     columnize (0.9.0)
+    crass (1.0.1)
     daemons (1.2.2)
     database_cleaner (1.4.1)
     debug_inspector (0.0.2)
@@ -147,6 +148,8 @@ GEM
     nenv (0.2.0)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
+    nokogumbo (1.2.0)
+      nokogiri
     notiffany (0.0.6)
       nenv (~> 0.1)
       shellany (~> 0.0)
@@ -218,6 +221,10 @@ GEM
       rspec-support (~> 3.2.0)
     rspec-support (3.2.2)
     rubyzip (1.1.7)
+    sanitize (3.1.2)
+      crass (~> 1.0.1)
+      nokogiri (>= 1.4.4)
+      nokogumbo (= 1.2.0)
     sass (3.4.13)
     sass-rails (5.0.1)
       railties (>= 4.0.0, < 5.0)
@@ -299,6 +306,7 @@ DEPENDENCIES
   rails (= 4.2.0)
   rails_12factor
   rspec-rails
+  sanitize
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   selenium-webdriver

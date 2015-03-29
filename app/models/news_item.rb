@@ -1,38 +1,37 @@
 class NewsItem < ActiveRecord::Base
 
+########TODO: How can api_call and response_page be class methods when I need to get the date in the API call from an instance of a collection??
+
 	require 'open-uri'
 
 	belongs_to :collection
 
 	attr_reader :response_hash
 
-  def api_call
-    url = "http://api.nytimes.com/svc/search/v2/articlesearch.json?fq=section_name.contains:Front&begin_date=#{self.get_date_string}&end_date=#{get_date_string}&-war&-death&-kill&-die&-rape&api-key=#{ENV['NYTIMES_KEY']}"
-    binding.pry
-    @response_hash = JSON.load(open(url))
-  end
+# ----- INSTANCE METHODS
+  # def initialize
+    
+  # end
 
-  def get_date_string
-    self.date.to_s.gsub("-","")[0..7]
-  end
-
-  def top_3_results
-  	api_call
-  	binding.pry
-  	self.response_hash["response"]["docs"].collect do |article|
+# ----- CLASS METHODS
+  def self.createFromDate(date)
+  	api_call(date)["response"]["docs"].collect do |article|
   		headline = article["headline"]["main"]
   		snippet = article["snippet"]
   		link = article["web_url"]
-  		binding.pry
-  		"#{headline}: #{snippet}, #{link}"
+      self.create(:headline => headline, :snippet => snippet, :link => link)
+      
   	end
   end
 
+  def self.api_call(date)
+    url = "http://api.nytimes.com/svc/search/v2/articlesearch.json?fq=section_name.contains:Front&begin_date=#{self.get_date_string(date)}&end_date=#{get_date_string(date)}&-war&-death&-kill&-die&-rape&api-key=#{ENV['NYTIMES_KEY']}"
+    response_hash = JSON.load(open(url))
+  end
 
-  # so I have a model. instances of the model should be 1 article. articles come in an array.
-
-  # From articles, want: "headline": response_hash["response"]["docs"][0]["headline"]["main"], 
-  # response_hash["response"]["docs"][0]["snippet"] - snippet", response_hash["response"]["docs"][0]["web_url"] - "web_url" 
-
+# ----- HELPERS
+  def self.get_date_string(date)
+    date.to_s.gsub("-","")[0..7]
+  end
 
 end

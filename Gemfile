@@ -23,6 +23,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Wiki client
 gem'wikipedia-client', '~> 1.3.3'
 
+gem 'sanitize'
+
 gem 'giphy', '~> 1.2.0'
 
 gem 'dotenv-rails', :groups => [:development, :test]
