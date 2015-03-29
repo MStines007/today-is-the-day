@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   get '/collections/:id' => 'collections#show'
 
+  post '/collections/:id/send_email' => 'collections#send_email'
+
   #get '/collection/id/show' => 'collections#show'
 
 

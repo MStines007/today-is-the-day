@@ -1,21 +1,14 @@
 class NewsItem < ActiveRecord::Base
 
-########TODO: How can api_call and response_page be class methods when I need to get the date in the API call from an instance of a collection??
-
 	require 'open-uri'
 
 	belongs_to :collection
 
 	attr_reader :response_hash
 
-# ----- INSTANCE METHODS
-  # def initialize
-    
-  # end
-
 # ----- CLASS METHODS
   def self.createFromDate(date)
-  	api_call(date)["response"]["docs"].collect do |article|
+  	api_call(date)["response"]["docs"][0..4].collect do |article|
   		headline = article["headline"]["main"]
   		snippet = article["snippet"]
   		link = article["web_url"]
