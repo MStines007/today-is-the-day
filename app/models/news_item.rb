@@ -13,7 +13,7 @@ class NewsItem < ActiveRecord::Base
   		snippet = article["snippet"]
   		link = article["web_url"]
       self.create(:headline => headline, :snippet => snippet, :link => link)
-      
+     
   	end
   end
 

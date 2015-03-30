@@ -1,77 +1,128 @@
-<h1>Happy Birthday (name_placeholder)!!!</h1>
+<div class="balloons-background-image"></div>
+
+
+<div
+<div class="smallertron">
+  <h1>Happy Birthday Matthew McConaughey!!!</h1>
+</div>
+<br>
+<div class="date-box">
+  <h3><%= @collection.date.to_formatted_s(:long_ordinal)[/[^,]+/]%> is the day!</h3>
+</div>
+
+<div class='email-box'>
+  <%= form_tag "/collections/#{@collection.id}/send_email", method: 'post' do %>
+    <%= submit_tag "Send in Email", :class => "btn btn-primary" %>
+  <% end %>
+</div>
+
+<div class='refresh-box'>
+  <%= form_tag "/collections/#{@collection.id}/send_email", method: 'post' do %>
+    <%= submit_tag "Send in Email", :class => "btn btn-primary" %>
+  <% end %>
+</div>
+
+<div class="events-box">
+  <h3>Events</h3>
+    <ul>
+      <% @collection.wiki_event_items.each do |attr| %>
+        <li><%= "#{attr.event.gsub!("&ndash;",":")[0...-2]}" %></li>
+      <% end %>
+    </ul>
+</div>
 <br>
 
-<h2><%= @collection.date.to_formatted_s(:long_ordinal)[/[^,]+/]%> is the day!</h2>
+<div class="births-box">
+<h3>Significant Births</h3>
+  <ul>
+    <% @collection.wiki_birth_items.each do |attr| %>
+      <li><%= "#{attr.birth.gsub!("&ndash;",":")[0...-2]}" %></li>
+    <% end %>
+  </ul>
+</div>
+<div class="first-giphy-box">
+  <iframe src="//giphy.com/embed/tnD8af8doAk1O?html5=true" width="480" height="361" frameBorder="0" webkitAllowFullScreen     mozallowfullscreen allowFullScreen></iframe>
+</div>
 <br>
 
-<h4>Events</h4>
-<% @collection.wiki_event_items.each do |attr| %>
-  <%= "#{attr.event.gsub!("&ndash;",":")[0...-2]}" %><br>
-<% end %>
-<br>
-<h4>Significant Births</h4>
-<% @collection.wiki_birth_items.each do |attr| %>
-  <%= "#{attr.birth.gsub!("&ndash;",":")[0...-2]}" %><br>
-<% end %>
-<br>
-<h4>Holidays and Observances</h4>
+<div class="holidays-box">
+<h3>Holidays and Observances</h3>
+<ul>
 <% @collection.wiki_holiday_items.each do |attr| %>
-  <%= "#{attr.holiday[0...-2]}" %><br>
+  <li><%= "#{attr.holiday[0...-2]}" %><br></li>
 <% end %>
-
-
-<% #----- NEWS_ITEMS %>
+</ul>
+</div>
+<br>
+<div class="events-box">
+<h3>New York Times headlines from the day you were born!</h3>
+<p>
 <ul>
 	<% @collection.news_items.each do |news_item| %>
-		<li><%= "#{news_item.headline}: #{news_item.snippet}, #{news_item.link}" %></li>
+		<li><strong><%= "#{news_item.headline}" %></strong>: <%="#{news_item.snippet}" %><a href= <%"#{news_item.link.html_safe}"%>><%="#{news_item.link.html_safe}"%></a></li><br><p>
 	<% end %>
 </ul>
+</div>
 
 
 
 <br>
 
-<% #----- GIPHYS %>
-<div>
-	<iframe src="//giphy.com/embed/7JsQ5EQTZlgHe?html5=true" width="480" height="270" frameBorder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-
-	<video autoplay loop>
-	  <source src=<%= @collection.giphy_items.first.api_call %> />
-	</video>
-
-	<video autoplay loop>
-	  <source src=<%= @collection.giphy_items.first.api_call %> />
-	</video>
-
-	<video autoplay loop>
-	  <source src=<%= @collection.giphy_items.first.api_call %> />
-	</video>
-
-	<iframe src="//giphy.com/embed/tnD8af8doAk1O?html5=true" width="480" height="361" frameBorder="0" webkitAllowFullScreen     mozallowfullscreen allowFullScreen></iframe>
+<!----- GIPHYS % ---->
 
 
 
-<video autoplay loop>
-  <source src=<%= @collection.giphy_items.first.api_call %> />
-</video>
-
-<iframe src="//giphy.com/embed/tnD8af8doAk1O?html5=true" width="480" height="361" frameBorder="0" webkitAllowFullScreen     mozallowfullscreen allowFullScreen></iframe>
-
-<% @collection.news_items.each do |news_item| %>
-	<%= "#{news_item.headline}, #{news_item.snippet}, #{news_item.link}" %>
-<% end %>
-
-	<video autoplay loop>
-	  <source src=<%= @collection.giphy_items.first.api_call %> />
-	</video>
+<div class="gif-smallertron">
+  <h1>MORE GIPHY'S!!!!</h1>
 </div>
+<br>
+
+<div class="left-giphy-box">
+  <iframe src="//giphy.com/embed/7JsQ5EQTZlgHe?html5=true" width="480" height="270" frameBorder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+</div>
+
+<div class="right-giphy-box">
+  <video autoplay loop>
+    <source src="//giphy.com/embed/7JsQ5EQTZlgHe?html5=true" />
+  </video>
+</div>
+<div class="left-giphy-box">
+  <video autoplay loop>
+    <source src="//giphy.com/embed/7JsQ5EQTZlgHe?html5=true" width="480" height="270" frameBorder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+  </video>
+</div>
+<div class="right-giphy-box">
+  <video autoplay loop>
+    <source src="//giphy.com/embed/7JsQ5EQTZlgHe?html5=true" width="480" height="270" frameBorder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+  </video>
+</div>
+<div class="left-giphy-box">
+  <video autoplay loop>
+    <source src="//giphy.com/embed/7JsQ5EQTZlgHe?html5=true" width="480" height="270" frameBorder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+  </video>
+</div>
+<div class="right-giphy-box">
+  <video autoplay loop>
+    <source src="//giphy.com/embed/7JsQ5EQTZlgHe?html5=true" width="480" height="270" frameBorder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen />
+  </video>
+</div>
+<div class="left-giphy-box">
+  <video autoplay loop>
+    <source src="//giphy.com/embed/7JsQ5EQTZlgHe?html5=true" width="480" height="270" frameBorder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen />
+  </video>
+</div>
+<div class="right-giphy-box">
+  <video autoplay loop>
+    <source src="//giphy.com/embed/7JsQ5EQTZlgHe?html5=true" width="480" height="270" frameBorder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen />
+  </video>
+</div>
+
+
+<!-- @collection.giphy_items.first.api_call -->
 
 <% #----- SEND_EMAIL %>
-<div>
-	<%= form_tag "/collections/#{@collection.id}/send_email", method: 'post' do %>
-	  <%= submit_tag "Send E-mail" %>
-	<% end %>
-</div>
 
 
-<%= # started writing a form with form_tag for the names and e-mail addresses, but then realized I need to make it a form_for so that we can pass the values through params. Will pick this up tomorrow %>
+
+
+<!-- started writing a form with form_tag for the names and e-mail addresses, but then realized I need to make it a form_for so that we can pass the values through params. Will pick this up tomorrow

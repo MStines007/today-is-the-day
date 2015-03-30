@@ -1,6 +1,19 @@
 
-<%= form_for @collection do |f| %>
-	<%= f.label :date, "Search for:" %>
-	<%= f.date_field :date %>
-	<%= f.submit "Submit" %>
-<% end %>
+  <div class="balloons-background-image"></div>
+
+    <div class="jumbotron">
+      <h1>Today is the Day!</h1>
+      <p>
+      <h2>please enter a birthdate!</h2>
+      <br>
+      <%= form_for @collection do |f| %>
+      <%= f.label :date %>
+      <%= f.date_field :date %>
+      <%= f.submit "submit", :class => "btn btn-primary" %></a>
+      
+    <% end %>
+      </p>
+      
+    </div>
+  </body>
+

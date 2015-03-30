@@ -33,4 +33,275 @@ body {
 
 .theme-showcase > p > .btn {
   margin: 5px 0;
+  background-color: transparent;
+
 }
+
+
+.balloons-background-image {
+  background-image: url(/assets/balloons.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  -webkit-filter: blur(3px);
+  -moz-filter: blur(2px);
+  -o-filter: blur(3px);
+  -ms-filter: blur(3px);
+  filter: blur(3px);
+}
+
+.navbar-default .navbar-brand {
+  color: #FFF;
+}
+
+.navbar-default {
+  background-color: #f8f8f8;
+  border-color: white;
+  opacity: 0.8;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px ;
+  width: 1000px;
+  margin: auto;
+  margin-bottom: 25px;
+  
+}
+
+.container .jumbotron {
+  border-radius: 10px;
+  opacity: 0.9;
+  backgroung-color: white;
+  width: 1000px;
+  margin: 0 auto;
+
+}
+
+
+.jumbotron h1, .jumbotron .h1 {
+  font-size: 90px;
+  text-align: center;
+  font-family: Tahoma, Geneva, sans-serif;
+  font-weight: bold;
+  text-shadow: 2px 2px 12px rgb(30, 144, 255);
+}
+
+.jumbotron {
+  padding: 30px;
+  margin-bottom: 30px;
+  color: #696969;
+  text-align: center;
+  border: 1px solid;
+  border-color: #178acc;
+  box-shadow: 5px 5px 15px;
+  
+}
+
+.subway-container {
+  padding: 10px 8px;
+}
+
+.widget-border {
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+}
+
+.smallertron h1, .smallertron .h1 {
+  font-size: 50px;
+  text-align: center;
+  font-family: Tahoma, Geneva, sans-serif;
+  font-weight: normal;
+  text-shadow: 1px 1px orange;
+}
+
+.smallertron {
+  padding: 30px;
+  margin-bottom: 30px;
+  color: inherit;
+  text-align: center;
+  border: 1px solid;
+  border-color: #178acc;
+  box-shadow: 5px 5px 15px ;
+  border-radius: 10px;
+  opacity: 0.85;
+  background-color: white;
+  
+
+}
+
+.smallertron h4, .smallertron .h4 {
+  font-size: 10px;
+  color: red;
+  text-align: center;
+  font-family: Tahoma, Geneva, sans-serif;
+  font-weight: normal;
+  text-shadow: 1px 1px orange;
+}
+
+.date-box {
+  padding: 10px 30px;
+  margin-bottom: 30px;
+  color: inherit;
+  text-align: left;
+  border: 1px solid;
+  border-color: #178acc;
+  box-shadow: 5px 5px 15px ;
+  border-radius: 10px;
+  opacity: 0.85;
+  background-color: white;
+  display: inline-block;
+  clear: left;
+  text-shadow: 1px 1px orange;
+}
+
+.email-box {
+  padding: 10px 30px;
+  margin: 30px 30px;
+  color: inherit;
+  text-align: left;
+  border: 1px solid;
+  border-color: #178acc;
+  box-shadow: 5px 5px 15px ;
+  border-radius: 10px;
+  opacity: 0.85;
+  background-color: white;
+  display: inline-flex;
+  float: top;
+}
+
+.refresh-box {
+  padding: 10px 30px;
+  margin: 30px 30px;
+  color: inherit;
+  text-align: left;
+  border: 1px solid;
+  border-color: #178acc;
+  box-shadow: 5px 5px 15px ;
+  border-radius: 10px;
+  opacity: 0.85;
+  background-color: white;
+  display: inline-flex;
+  float: right;
+  clear: right;
+}
+
+
+.events-box {
+  padding: 10px 30px;
+  margin-bottom: 30px;
+  color: inherit;
+  text-align: left;
+  border: 1px solid;
+  border-color: #178acc;
+  box-shadow: 5px 5px 15px ;
+  border-radius: 10px;
+  opacity: 0.85;
+  background-color: white;
+
+}
+
+.first-giphy-box {
+  padding: 4px 5px;
+  margin-bottom: 30px;
+  color: inherit;
+  text-align: center;
+  border: 1px solid;
+  border-color: #178acc;
+  box-shadow: 5px 5px 15px ;
+  border-radius: 4px;
+  float: right;
+  background-color: white;
+  display: inline-block;
+}
+
+.births-box {
+  padding: 10px 30px;
+  margin-bottom: 30px;
+  color: inherit;
+  text-align: left;
+  border: 1px solid;
+  border-color: #178acc;
+  box-shadow: 5px 5px 15px ;
+  border-radius: 10px;
+  opacity: 0.85;
+  background-color: white;
+  display: inline-block;
+  float: top;
+  clear: both;
+  max-width: 550px;
+}
+
+.holidays-box {
+  padding: 10px 30px;
+  margin-bottom: 30px;
+  color: inherit;
+  text-align: left;
+  border: 1px solid;
+  border-color: #178acc;
+  box-shadow: 5px 5px 15px ;
+  border-radius: 10px;
+  opacity: 0.85;
+  background-color: white;
+  display: inline-block;
+  max-width: 550px;
+}
+
+
+.left-giphy-box {
+  padding: 4px 5px;
+  margin-bottom: 30px;
+  color: inherit;
+  text-align: center;
+  border: 1px solid;
+  border-color: #178acc;
+  box-shadow: 5px 5px 15px ;
+  border-radius: 4px;
+  float: right;
+  background-color: white;
+  display: inline-flex;
+  float: left;
+  clear:left;
+}
+
+.right-giphy-box {
+  padding: 4px 5px;
+  margin-bottom: 30px;
+  color: inherit;
+  text-align: center;
+  border: 1px solid;
+  border-color: #178acc;
+  box-shadow: 5px 5px 15px ;
+  border-radius: 4px;
+  background-color: white;
+  display: inline-flex;
+  float: right;
+  clear: right;
+}
+
+.gif-smallertron {
+  padding: 20px;
+  margin-bottom: 30px;
+  color: inherit;
+  text-align: center;
+  border: 1px solid;
+  border-color: #178acc;
+  box-shadow: 5px 5px 15px ;
+  border-radius: 10px;
+  opacity: 0.85;
+  background-color: white;
+  display: inline-block;
+  clear: left;
+}
+
+.gif-smallertron h1, .smallertron .h1 {
+  font-size: 50px;
+  text-align: center;
+  font-family: Tahoma, Geneva, sans-serif;
+  font-weight: normal;
+  text-shadow: 1px 1px orange;
+}
+
+
