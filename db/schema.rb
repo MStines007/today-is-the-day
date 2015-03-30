@@ -11,17 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 20150328234258) do
-
+ActiveRecord::Schema.define(version: 20150329185604) do
 
   create_table "collections", force: :cascade do |t|
     t.datetime "date"
+    t.string   "to_name"
+    t.string   "to_email"
+    t.string   "from_name"
+    t.string   "from_email"
   end
 
   create_table "giphy_items", force: :cascade do |t|
     t.datetime "date"
-    t.string   "url"
     t.integer  "collection_id"
   end
 
