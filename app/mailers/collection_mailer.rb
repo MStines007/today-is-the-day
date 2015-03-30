@@ -2,8 +2,7 @@ class CollectionMailer < ApplicationMailer
 
 	def gift_email(collection)
 		@collection = collection
-		@url = "/collections/#{@collection.id}"
-		mail(to: 'testing007testing007@gmail.com', subject: "#{@collection.date}: OUR APP SENT THIS!!!!!")
+		mail(to: "#{@collection.to_email}", cc: "#{@collection.from_email}", reply_to: "#{@collection.from_email}",  subject: "#{@collection.from_name} says #{@collection.date.to_date} is YOUR day!")
 	end
 
 end

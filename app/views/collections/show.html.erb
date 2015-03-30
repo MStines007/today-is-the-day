@@ -3,7 +3,7 @@
 
 <div
 <div class="smallertron">
-  <h1>Happy Birthday Matthew McConaughey!!!</h1>
+  <h1>Happy Birthday <%="#{@collection.to_name.titleize}"%>!!!!!!</h1>
 </div>
 <br>
 <div class="date-box">
@@ -51,6 +51,7 @@
 <% @collection.wiki_holiday_items.each do |attr| %>
   <li><%= "#{attr.holiday[0...-2]}" %><br></li>
 <% end %>
+
 </ul>
 </div>
 <br>
@@ -59,10 +60,11 @@
 <p>
 <ul>
 	<% @collection.news_items.each do |news_item| %>
-		<li><strong><%= "#{news_item.headline}" %></strong>: <%="#{news_item.snippet}" %><a href= <%"#{news_item.link.html_safe}"%>><%="#{news_item.link.html_safe}"%></a></li><br><p>
+		<li><strong><%= "#{news_item.headline}" %></strong>: <%="#{news_item.snippet}" %><a href= <%"#{news_item.link.html_safe}"%>><p><%="#{news_item.link.html_safe}"%></a></li><br><p>
 	<% end %>
 </ul>
 </div>
+
 
 
 
@@ -76,6 +78,7 @@
   <h1>MORE GIPHY'S!!!!</h1>
 </div>
 <br>
+
 
 <div class="left-giphy-box">
   <iframe src="//giphy.com/embed/7JsQ5EQTZlgHe?html5=true" width="480" height="270" frameBorder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
@@ -120,9 +123,26 @@
 
 <!-- @collection.giphy_items.first.api_call -->
 
+
+
 <% #----- SEND_EMAIL %>
+<div>
 
+	<%= form_for(@collection, url: "/collections/#{@collection.id}/send_email", html: {method: "post"}) do |f| %> 
+		<%= f.label :to_name,  "Whose day is it? Enter their name here." %>
+		<%= f.text_field :to_name %><br>
 
+		<%= f.label :to_email, :value => "What e-mail should we send it to?" %>
+		<%= f.text_field :to_email %><br>
 
+		<%= f.label :from_name, :value => "What is your name?" %>
+		<%= f.text_field :from_name %><br>
 
-<!-- started writing a form with form_tag for the names and e-mail addresses, but then realized I need to make it a form_for so that we can pass the values through params. Will pick this up tomorrow
+		<%= f.label :from_email, :value => "What is your e-mail address?" %>
+		<%= f.text_field :from_email %><br>
+
+		<%= f.submit "Send E-mail!" %>
+	<% end %>
+	
+</div>
+
