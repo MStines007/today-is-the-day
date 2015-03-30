@@ -21,14 +21,12 @@
 
 
 <% #----- NEWS_ITEMS %>
-<ul>
-	<% @collection.news_items.each do |news_item| %>
-		<li><%= "#{news_item.headline}: #{news_item.snippet}, #{news_item.link}" %></li>
-	<% end %>
-</ul>
-
-
-
+<h4>The Day's Top Headlines</h4>
+	<ul>
+		<% @collection.news_items.each do |news_item| %>
+			<li><%= "#{news_item.headline}: #{news_item.snippet}, #{news_item.link}" %></li>
+		<% end %>
+	</ul>
 <br>
 
 <% #----- GIPHYS %>
@@ -49,29 +47,25 @@
 
 	<iframe src="//giphy.com/embed/tnD8af8doAk1O?html5=true" width="480" height="361" frameBorder="0" webkitAllowFullScreen     mozallowfullscreen allowFullScreen></iframe>
 
-
-
-<video autoplay loop>
-  <source src=<%= @collection.giphy_items.first.api_call %> />
-</video>
-
-<iframe src="//giphy.com/embed/tnD8af8doAk1O?html5=true" width="480" height="361" frameBorder="0" webkitAllowFullScreen     mozallowfullscreen allowFullScreen></iframe>
-
-<% @collection.news_items.each do |news_item| %>
-	<%= "#{news_item.headline}, #{news_item.snippet}, #{news_item.link}" %>
-<% end %>
-
-	<video autoplay loop>
-	  <source src=<%= @collection.giphy_items.first.api_call %> />
-	</video>
 </div>
 
 <% #----- SEND_EMAIL %>
 <div>
-	<%= form_tag "/collections/#{@collection.id}/send_email", method: 'post' do %>
-	  <%= submit_tag "Send E-mail" %>
+
+	<%= form_for(@collection, url: "/collections/#{@collection.id}/send_email", html: {method: "post"}) do |f| %> 
+		<%= f.label :to_name,  "Whose day is it? Enter their name here." %>
+		<%= f.text_field :to_name %><br>
+
+		<%= f.label :to_email, :value => "What e-mail should we send it to?" %>
+		<%= f.text_field :to_email %><br>
+
+		<%= f.label :from_name, :value => "What is your name?" %>
+		<%= f.text_field :from_name %><br>
+
+		<%= f.label :from_email, :value => "What is your e-mail address?" %>
+		<%= f.text_field :from_email %><br>
+
+		<%= f.submit "Send E-mail!" %>
 	<% end %>
+	
 </div>
-
-
-<%= # started writing a form with form_tag for the names and e-mail addresses, but then realized I need to make it a form_for so that we can pass the values through params. Will pick this up tomorrow %>
