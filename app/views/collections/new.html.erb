@@ -1,14 +1,12 @@
+<div class="balloons-background-image"></div>
 
   <div class="balloons-background-image"></div>
-
     <div class="jumbotron">
       <h1>Today is the Day!</h1>
       <p>
       <h2>please enter a birthdate!</h2>
       <br>
-
       <%= form_for @collection do |f| %>
-      
       <%= f.text_field :to_name, :placeholder => " Name" %>
       <%= f.date_field :date %>
       <%= f.submit "submit", :class => "btn btn-primary" %>
@@ -18,8 +16,10 @@
       
     </div>
     <br>
-    <div class="jumbotron">
-      <h3>TEST TEST</h3>
+    <div class="jumbotron-2">
+      <h3>Clicking submit will take you to a customized birthday time capsule.</h3>
+      <h3>After your review it fill out the email form and send it to a friend!</h3>
     </div>
   
+
 
