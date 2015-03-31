@@ -29,12 +29,8 @@ class WikiBirthItem < ActiveRecord::Base
   def self.random_birth_item
     birth_item = wiki_births_array.sample(5)
     birth_item.each do |birth|
-      birth.gsub("\n", "").squish
-      # if birth["&ndash;"]= ":"
-      #   birth.html_safe
-      # else
-      #   birth.html_safe
-      #end
+      birth.gsub("\n", "").gsub("<",'').gsub(">",'').gsub("/p",'').squish
     end
+
   end
 end

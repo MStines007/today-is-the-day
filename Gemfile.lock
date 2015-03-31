@@ -304,6 +304,7 @@ DEPENDENCIES
   pg
   pry
   rails (= 4.2.0)
+  rails-html-sanitizer
   rails_12factor
   rspec-rails
   sanitize

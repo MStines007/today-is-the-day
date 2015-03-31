@@ -15,6 +15,7 @@ class CollectionsController < ApplicationController
 		@collection.wiki_holiday_items = WikiHolidayItem.create_from_date(date)
 		@collection.news_items = NewsItem.create_from_date(date)
 		@collection.to_name = params[:collection][:to_name]
+		
 		@collection.save
 
 		redirect_to collection_path(@collection.id)
@@ -22,6 +23,11 @@ class CollectionsController < ApplicationController
 
 	def show
 		find_collection
+	end
+
+	def update
+		find_collection
+		create
 	end
 
 	def send_email

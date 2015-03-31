@@ -19,7 +19,6 @@ class WikiHolidayItem < ActiveRecord::Base
   end
 
   def self.format_date(date)
-    # make date compatible for use in wiki api call
     date.to_datetime.to_formatted_s(:long_ordinal)[/[^,]+/]
   end
 
@@ -28,26 +27,11 @@ class WikiHolidayItem < ActiveRecord::Base
   end
 
   def self.random_holiday_item
-
-    holiday_item = wiki_holidays_array.sample(3)
+    holiday_item = wiki_holidays_array.sample(4)
     holiday_item.each do |holiday|
       holiday.gsub("<",'').gsub(">",'').gsub("/p",'').gsub("\\",'').gsub("</p>",'').gsub("<p>",'').gsub("\\n",'').squish
-      # holiday["&ndash;"]= ":"
-      holiday.html_safe
     end
   end
 end
-
-# def sanitize_holiday_item
-  #   if @holiday_item.include? "&ndash"
-  #      @holiday_item["&ndash"]= ""  
-  #      @holiday_item["\\\\n"]=""
-  #   else 
-  #     @holiday_item["\\\\n"]=""
-  #   end
-  #     @holiday_item
-  # end
-
-  
 
 

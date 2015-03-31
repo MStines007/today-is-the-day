@@ -229,7 +229,8 @@ body {
 
 .first-giphy-box {
   padding: 4px 5px;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
+  margin-top: -60px;
   color: inherit;
   text-align: center;
   border: 1px solid;
@@ -239,6 +240,7 @@ body {
   float: right;
   background-color: white;
   display: inline-block;
+  clear: both;
 }
 
 .births-box {
@@ -317,7 +319,8 @@ body {
   opacity: 0.85;
   background-color: white;
   display: inline-block;
-  clear: left;
+  clear: both;
+  float: left;
 }
 
 .gif-smallertron h1, .smallertron .h1 {
