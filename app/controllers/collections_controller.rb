@@ -6,15 +6,6 @@ class CollectionsController < ApplicationController
 	end
 
 	def create
-
-		# @collection = Collection.create(:date => params[:collection][:date])
-		# @collection.giphy_items.build(:date => params[:collection][:date])
-		# @collection.wiki_event_items = WikiEventItem.create_from_date(params[:collection][:date])
-		# @collection.wiki_birth_items = WikiBirthItem.create_from_date(params[:collection][:date])
-		# @collection.wiki_holiday_items = WikiHolidayItem.create_from_date(params[:collection][:date])
-		# @collection.news_items = NewsItem.createFromDate(params[:collection][:date])
-		# @collection.save
-
 		date = params[:collection][:date]
 
 		@collection = Collection.create(:date => date)
@@ -25,7 +16,6 @@ class CollectionsController < ApplicationController
 		@collection.news_items = NewsItem.create_from_date(date)
 		@collection.to_name = params[:collection][:to_name]
 		@collection.save
-
 
 		redirect_to collection_path(@collection.id)
 	end
@@ -38,6 +28,7 @@ class CollectionsController < ApplicationController
 		find_collection
 		@collection.update(collection_params)
 		CollectionMailer.gift_email(@collection).deliver_now
+		flash[:notice] = "Email Sent!"
 		redirect_to collection_path(@collection.id)
 
 	end

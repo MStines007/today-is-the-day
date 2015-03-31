@@ -123,6 +123,7 @@ textarea {
   color: inherit;
   font: inherit;
   margin: 0;
+  height: 40px;
 }
 button {
   overflow: visible;

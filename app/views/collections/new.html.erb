@@ -6,9 +6,10 @@
       <p>
       <h2>please enter a birthdate!</h2>
       <br>
+
       <%= form_for @collection do |f| %>
-      <%= f.label :to_name,  "Name" %>
-      <%= f.text_field :to_name %>
+      
+      <%= f.text_field :to_name, :placeholder => " Name" %>
       <%= f.date_field :date %>
       <%= f.submit "submit", :class => "btn btn-primary" %>
       
@@ -16,5 +17,9 @@
       </p>
       
     </div>
-  </body>
+    <br>
+    <div class="jumbotron">
+      <h3>TEST TEST</h3>
+    </div>
+  
 

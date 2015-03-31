@@ -1,7 +1,6 @@
 <div class="balloons-background-image"></div>
 
 
-<div
 <div class="smallertron">
   <h1>Happy Birthday <%="#{@collection.to_name.titleize}"%>!!!!!!</h1>
 </div>
@@ -10,33 +9,34 @@
   <h3><%= @collection.date.to_formatted_s(:long_ordinal)[/[^,]+/]%> is the day!</h3>
 </div>
 
-<div class='email-box'>
-  <%= form_tag "/collections/#{@collection.id}/send_email", method: 'post' do %>
-    <%= submit_tag "Send in Email", :class => "btn btn-primary" %>
-  <% end %>
-</div>
+<% if flash[:notice] %>
+    <div class="notice-box"><h3><strong><%= flash[:notice] %></strong></h3></div>
+<% end %>
+
+
 
 <div class='refresh-box'>
-  <%= form_tag "/collections/#{@collection.id}/send_email", method: 'post' do %>
-    <%= submit_tag "Send in Email", :class => "btn btn-primary" %>
-  <% end %>
+
+  <%=  %>
+    <%= submit_tag "Refresh Content", :class => "btn btn-primary" %>
+  <% #end %>
 </div>
 
 <div class="events-box">
-  <h3>Events</h3>
+  <h3><strong>Events</strong></h3>
     <ul>
       <% @collection.wiki_event_items.each do |attr| %>
-        <li><%= "#{attr.event.gsub!("&ndash;",":")[0...-2]}" %></li>
+        <li><h4><%= "#{attr.event.gsub!("&ndash;",":")[0...-2]}" %></h4></li>
       <% end %>
     </ul>
 </div>
 <br>
 
 <div class="births-box">
-<h3>Significant Births</h3>
+<h3><strong>Significant Births</strong></h3>
   <ul>
     <% @collection.wiki_birth_items.each do |attr| %>
-      <li><%= "#{attr.birth.gsub!("&ndash;",":")[0...-2]}" %></li>
+      <li><h4><%= "#{attr.birth.gsub!("&ndash;",":")[0...-2]}" %></h4></li>
     <% end %>
   </ul>
 </div>
@@ -46,39 +46,49 @@
 <br>
 
 <div class="holidays-box">
-<h3>Holidays and Observances</h3>
+<h3><strong>Holidays and Observances</strong></h3>
 <ul>
 <% @collection.wiki_holiday_items.each do |attr| %>
-  <li><%= "#{attr.holiday[0...-2]}" %><br></li>
+  <li><h4><%= "#{attr.holiday[0...-2]}" %></h4></li>
 <% end %>
 
 </ul>
 </div>
 <br>
 <div class="events-box">
-<h3>New York Times headlines from the day you were born!</h3>
-<p>
+<h2>New York Times headlines from the day you were born!</h2>
+<br>
 <ul>
 	<% @collection.news_items.each do |news_item| %>
-		<li><strong><%= "#{news_item.headline}" %></strong>: <%="#{news_item.snippet}" %><a href= <%"#{news_item.link.html_safe}"%>><p><%="#{news_item.link.html_safe}"%></a></li><br><p>
+		<li><h4><strong><%= "#{news_item.headline}" %></strong>:</h4> <h5><%="#{news_item.snippet}" %></h5><h5><a href= "<%"#{news_item.link.html_safe}"%>"><p><%="#{news_item.link.html_safe}"%></a></h5></li><br><p>
 	<% end %>
 </ul>
 </div>
-
-
-
-
 <br>
-
-<!----- GIPHYS % ---->
-
-
 
 <div class="gif-smallertron">
   <h1>MORE GIPHY'S!!!!</h1>
 </div>
-<br>
 
+<div class="form-box">
+
+  <%= form_for(@collection, url: "/collections/#{@collection.id}/send_email", html: {method: "post"}) do |f| %> 
+    <%= f.label :to_name,  "Whose day is it? Enter their name here." %>
+    <%= f.text_field :to_name %><br>
+
+    <%= f.label :to_email, :value => "What e-mail should we send it to?" %>
+    <%= f.text_field :to_email %><br>
+
+    <%= f.label :from_name, :value => "What is your name?" %>
+    <%= f.text_field :from_name %><br>
+
+    <%= f.label :from_email, :value => "What is your e-mail address?" %>
+    <%= f.text_field :from_email %><br>
+
+    <%= f.submit "Send E-mail!", :class => "btn btn-primary" %>
+  <% end %>
+  
+</div>
 
 <div class="left-giphy-box">
   <iframe src="//giphy.com/embed/7JsQ5EQTZlgHe?html5=true" width="480" height="270" frameBorder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
@@ -125,24 +135,7 @@
 
 
 
-<% #----- SEND_EMAIL %>
-<div>
 
-	<%= form_for(@collection, url: "/collections/#{@collection.id}/send_email", html: {method: "post"}) do |f| %> 
-		<%= f.label :to_name,  "Whose day is it? Enter their name here." %>
-		<%= f.text_field :to_name %><br>
 
-		<%= f.label :to_email, :value => "What e-mail should we send it to?" %>
-		<%= f.text_field :to_email %><br>
 
-		<%= f.label :from_name, :value => "What is your name?" %>
-		<%= f.text_field :from_name %><br>
-
-		<%= f.label :from_email, :value => "What is your e-mail address?" %>
-		<%= f.text_field :from_email %><br>
-
-		<%= f.submit "Send E-mail!" %>
-	<% end %>
-	
-</div>
 

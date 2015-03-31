@@ -19,7 +19,6 @@ class WikiBirthItem < ActiveRecord::Base
   end 
 
   def self.format_date(date)
-    # make date compatible for use in wiki api call
     date.to_datetime.to_formatted_s(:long_ordinal)[/[^,]+/]
   end
 
