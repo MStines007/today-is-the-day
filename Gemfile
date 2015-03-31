@@ -27,7 +27,7 @@ gem 'sanitize'
 
 gem 'giphy', '~> 1.2.0'
 
-gem 'dotenv-rails', :groups => [:development, :test]
+gem 'puma'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
