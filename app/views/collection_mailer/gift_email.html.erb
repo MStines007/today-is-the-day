@@ -1,5 +1,5 @@
 
-<h1><%= @collection.date.to_date %> is the day - Happy Birthday!!!!!</h1>
+<h1><%= @collection.date.to_formatted_s(:long_ordinal)[/[^,]+/] %> is the day - Happy Birthday!!!!!</h1>
 
 <h3>Dear <%= @collection.to_name %>,</h3>
 

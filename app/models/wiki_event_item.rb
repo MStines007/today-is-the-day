@@ -31,7 +31,6 @@ class WikiEventItem < ActiveRecord::Base
   def self.random_event_item
     event_item = wiki_events_array.sample(5)
     event_item.each do |event|
-      #binding.pry
       event.gsub('\n',"").gsub("<",'').gsub(">",'').gsub("/p",'').squish
       # binding.pry
       # if event["&ndash;"]= ":"

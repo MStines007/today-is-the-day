@@ -96,14 +96,25 @@ body {
   
 }
 
-.subway-container {
-  padding: 10px 8px;
+
+.jumbotron-2 {
+  padding: 15px;
+  color: #696969;
+  text-align: center;
+  border: 1px solid;
+  border-color: #178acc;
+  box-shadow: 5px 5px 15px;
+  width: 1000px;
+  margin: auto;
+  border-radius: 10px;
+  opacity: 0.9;
+  background-color: white;
+  margin-top: 30px;
+  font-family: Tahoma, Geneva, sans-serif;
+  text-shadow: 1px 1px orange;
+  
 }
 
-.widget-border {
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-}
 
 .smallertron h1, .smallertron .h1 {
   font-size: 50px;
@@ -153,9 +164,25 @@ body {
   text-shadow: 1px 1px orange;
 }
 
-.email-box {
+.notice-box {
   padding: 10px 30px;
-  margin: 30px 30px;
+  margin-left: 30px;
+  color: inherit;
+  text-align: center;
+  border: 1px solid;
+  border-color: #178acc;
+  box-shadow: 5px 5px 15px ;
+  border-radius: 10px;
+  opacity: 0.85;
+  background-color: #00FF00;
+  display: inline-flex;
+  float: top;
+  text-shadow: 1px 1px orange;
+}
+
+.refresh-box {
+  padding: 10px 30px;
+  margin: 10px 10px;
   color: inherit;
   text-align: left;
   border: 1px solid;
@@ -165,12 +192,13 @@ body {
   opacity: 0.85;
   background-color: white;
   display: inline-flex;
-  float: top;
+  float: right;
+  clear: right;
 }
 
-.refresh-box {
+.form-box {
   padding: 10px 30px;
-  margin: 30px 30px;
+  margin-bottom: 30px;
   color: inherit;
   text-align: left;
   border: 1px solid;
@@ -298,6 +326,10 @@ body {
   font-family: Tahoma, Geneva, sans-serif;
   font-weight: normal;
   text-shadow: 1px 1px orange;
+}
+
+.text-field {
+  height: 50px;
 }
 
 

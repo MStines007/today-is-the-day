@@ -7,7 +7,6 @@ class WikiHolidayItem < ActiveRecord::Base
 
   def self.create_from_date(date)
     page_array = self.holiday_api_call(date)
-    # binding.pry
     page_array.collect do |holiday|
       self.create(:holiday => holiday)
     end
