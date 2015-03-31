@@ -74,7 +74,7 @@
 
 <div class="form-box">
 
-  <%= form_for(@collection, url: "/collections/#{@collection.id}/send_email", html: {method: "post"}) do |f| %> 
+  <%= form_for(Collection.new, url: "/collections/#{@collection.id}/send_email", html: {method: "post"}) do |f| %> 
     <%= f.label :to_name,  "Whose day is it? Enter their name here." %>
     <%= f.text_field :to_name %><br>
 
