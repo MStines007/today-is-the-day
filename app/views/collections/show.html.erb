@@ -55,16 +55,17 @@
 </ul>
 </div>
 <br>
-<div class="events-box">
-<h3>New York Times headlines from the day you were born!</h3>
-<p>
-<ul>
-	<% @collection.news_items.each do |news_item| %>
-		<li><strong><%= "#{news_item.headline}" %></strong>: <%="#{news_item.snippet}" %><a href= <%"#{news_item.link.html_safe}"%>><p><%="#{news_item.link.html_safe}"%></a></li><br><p>
-	<% end %>
-</ul>
-</div>
-
+<% if @collection.news_items.count > 0 %>
+  <div class="events-box">
+  <h3>New York Times headlines from the day you were born!</h3>
+  <p>
+  <ul>
+  	<% @collection.news_items.each do |news_item| %>
+  		<li><strong><%= "#{news_item.headline}" %></strong>: <%="#{news_item.snippet}" %><a href= <%"#{news_item.link.html_safe}"%>><p><%="#{news_item.link.html_safe}"%></a></li><br><p>
+  	<% end %>
+  </ul>
+  </div>
+<% end %>
 
 
 
