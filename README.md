@@ -14,7 +14,7 @@ Today is the Day! currently runs locally through a Rails server.
 
 ## Future
 
-Going forward we plan to continue refactoring the code, adding features and refining visual styling. Deployment is also in the coming.
+Going forward we plan to continue refactoring the code, adding features and refining visual styling. Deployment is also coming.
 
 ## Authors
 
