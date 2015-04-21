@@ -1,40 +1,25 @@
-# Birthdayapp
+Today is the Day!
 
 ## Description
 
-Add a short description of your app.
-
-## Screenshots
-
-Add some spiffy screenshots of your app here.
+Today is the Day! is a lightweight rails app that generates a custom list of events, famous births, observed holidays and New York Times headlines which coincide with a particular birthday entered by the user. It's meant to be an easy way to celebrate a birthday or to learn more about the day you were born.
 
 ## Background
 
-Why did you want to make this app? What was your development process
-like?
-
-## Features
-
-Bullet point some of the key features of your app here.
+Created in 2015 by Skylar Panuska and Matthew Stines at the Flatiron School in New York City.
 
 ## Usage
 
-How do users use your app?
-
-## Development/Contribution
-
-Explain how people can contribute to your app. How should they write tests?
-Any things in particular you'd like to see in pull requests?
+Today is the Day! currently runs locally through a Rails server.
 
 ## Future
 
-What features are you currently working on? Only mention things that you
-actually are implementing. No pie-in-the-sky-never-gonna-happen stuff.
+Going forward we plan to continue refactoring the code, adding features and refining visual styling. Deployment is also in the coming.
 
-## Author
+## Authors
 
-Link to your blog, twitter, etc!
+Skylar Panuska and Matthew Stines
 
 ## License
 
-Birthdayapp is MIT Licensed. See LICENSE for details.
+Today is the Day! is MIT Licensed. See LICENSE for details.
