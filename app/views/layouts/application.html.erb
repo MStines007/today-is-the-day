@@ -15,12 +15,37 @@
   <div class="navbar navbar-default">
     <div class="navbar-header">
       
-      <ul class="nav navbar-nav">
-        <a href="/" class="navbar-brand">A Birthday time capsule!</a>
-      </ul>
-
+      <div class="nav navbar-nav">
+        <a href="/" class="navbar-brand home-btn">A Birthday time capsule!</a>
+        
+      </div>
     </div>
+    <div><a href="#" class="navbar-brand about" id="show_modal">About</a></div>
+
   </div>
+
+<!-- modal code -->
+  <div class="bs-component">
+    <div class="modal fade" id="about_modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+            <h3 class="modal-title">About</h3>
+          </div>
+          <div class="modal-body">
+            <p><h4>Thanks for checking out "Today is the Day!"<p><br><p>Created in 2015 by <%= link_to "Matthew Stines", "https://github.com/mstines007" %> and <%= link_to "Skylar Panuska", "https://github.com/spanuska" %> at the Flatiron School in New York City.<p>
+            <p><br>
+            <%= link_to "Source", "https://github.com/MStines007/today-is-the-day" %>
+            </p></h4>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  <div id="source-button" class="btn btn-primary btn-xs" style="display: none;">&lt; &gt;</div></div>
 
   <%= yield %>
 

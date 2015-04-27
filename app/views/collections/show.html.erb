@@ -16,7 +16,7 @@
 
 
 <div class='refresh-box'>
-<%= link_to "Click to reload new events, births and holidays!", collections_path(:collection => {:to_name => @collection.to_name, :date => @collection.date}), :method => "POST", :class => "btn btn-primary" %>r
+<%= link_to "Click to reload new events, births and holidays!", collections_path(:collection => {:to_name => @collection.to_name, :date => @collection.date}), :method => "POST", :class => "btn btn-primary" %>
 </div>
 
 <div class="events-box">
@@ -97,7 +97,7 @@
   <h1>MORE GIPHY'S!!!!</h1>
 </div>
 
-<div class="left-giphy-box">
+<<!-- div class="left-giphy-box">
   <iframe src="//giphy.com/embed/7JsQ5EQTZlgHe?html5=true" width="480" height="270" frameBorder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 </div>
 
@@ -135,7 +135,7 @@
   <video autoplay loop>
     <source src=<%= @collection.giphy_items.first.api_call %> />
   </video>
-</div>
+</div> -->
 
 
 <!-- @collection.giphy_items.first.api_call -->
