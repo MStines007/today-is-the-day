@@ -2623,9 +2623,6 @@ input[type="search"] {
     line-height: 54px;
   }
 }
-.form-group {
-  margin-bottom: 15px;
-}
 .radio,
 .checkbox {
   position: relative;
@@ -2689,8 +2686,8 @@ fieldset[disabled] .checkbox label {
   cursor: not-allowed;
 }
 .form-control-static {
-  padding-top: 9px;
-  padding-bottom: 9px;
+  padding-top: 2px;
+  padding-bottom: 2px;
   margin-bottom: 0;
   min-height: 34px;
 }
