@@ -4,6 +4,6 @@
 <h3>Dear <%= @collection.to_name %>,</h3>
 
 	<p>
-	Today is YOUR day, and your friend <%= "#{@collection.from_name}"  %> sent you a gift! Click this link: <%= link_to "Today is the day!", "localhost:3000/collections/#{@collection.id}" %> to see the custom birthday message!
+	Today is YOUR day, and your friend <%= "#{@collection.from_name}"  %> sent you a gift! Click this link: <%= link_to "Today is the day!", @collection %>to see the custom birthday message!
 	</p>
 

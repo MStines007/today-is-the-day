@@ -36,7 +36,6 @@ class CollectionsController < ApplicationController
 		CollectionMailer.gift_email(@collection).deliver_now
 		flash[:notice] = "Email Sent!"
 		redirect_to collection_path(@collection.id)
-
 	end
 
 	#----- HELPERS
