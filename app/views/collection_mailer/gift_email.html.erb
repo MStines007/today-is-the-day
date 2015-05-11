@@ -3,7 +3,7 @@
 		<h1><%= @collection.date.to_formatted_s(:long_ordinal)[/[^,]+/] %> is the day - Happy Birthday!!!!!</h1>
 
 		<h3>Dear <%= @collection.to_name %>,</h3>
-			<p>Today is YOUR day, and your friend <%= "#{@collection.from_name}"  %> sent you a gift! Click this link: <%= link_to "Today is the day!", @collection %>to see the custom birthday message! </p>
+			<p>Today is YOUR day, and your friend <%= "#{@collection.from_name}"  %> sent you a gift! Click this link: <%= link_to "Today is the day!", @collection %> to see the custom birthday message! </p>
 
 	</div>
 </div>
