@@ -10,6 +10,9 @@ default: &default
   timeout: 5000
 
 development:
+  adapter: postgresql
+  host: localhost
+  username: user
   <<: *default
   database: db/development.sqlite3
 
