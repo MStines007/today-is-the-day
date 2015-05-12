@@ -1,4 +1,4 @@
- require 'Giphy'
+ require 'giphy'
  # require 'open-uri'   
 
 class GiphyItem < ActiveRecord::Base
