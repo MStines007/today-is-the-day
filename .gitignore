@@ -5,3 +5,6 @@ db/development.sqlite3
 log/*
 tmp/*
 .env
+
+# Ignore application configuration
+/config/application.yml

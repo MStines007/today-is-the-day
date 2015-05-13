@@ -93,6 +93,8 @@ GEM
       faraday_middleware (~> 0.8)
       oj (~> 2.0)
     ffi (1.9.8)
+    figaro (1.1.0)
+      thor (~> 0.14)
     formatador (0.2.5)
     giphy (1.2.0)
       faraday (~> 0.8.8)
@@ -294,6 +296,7 @@ DEPENDENCIES
   database_cleaner
   dotenv-rails
   factory_girl_rails
+  figaro
   giphy (~> 1.2.0)
   google-analytics-rails
   guard-rspec
