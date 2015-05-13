@@ -7,12 +7,12 @@ class NewsItem < ActiveRecord::Base
 	attr_reader :response_hash
 
 # ----- CLASS METHODS
-  def self.create_from_date(date)
+  def self.new_from_date(date)
   	api_call(date)["response"]["docs"][0..4].collect do |article|
   		headline = article["headline"]["main"]
   		snippet = article["snippet"]
   		link = article["web_url"]
-      self.create(:headline => headline, :snippet => snippet, :link => link)
+      self.new(:headline => headline, :snippet => snippet, :link => link)
      
   	end
   end
