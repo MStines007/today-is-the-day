@@ -5,10 +5,10 @@ class WikiBirthItem < ActiveRecord::Base
 
   attr_accessor :wiki_json
 
-  def self.create_from_date(date)
+  def self.new_from_date(date)
     page_array = self.birth_api_call(date)
     page_array.collect do |birth|
-      self.create(:birth => birth)
+      self.new(:birth => birth)
     end
   end
 

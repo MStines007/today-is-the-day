@@ -5,10 +5,10 @@ class WikiHolidayItem < ActiveRecord::Base
 
   attr_accessor :wiki_json
 
-  def self.create_from_date(date)
+  def self.new_from_date(date)
     page_array = self.holiday_api_call(date)
     page_array.collect do |holiday|
-      self.create(:holiday => holiday)
+      self.new(:holiday => holiday)
     end
   end
 
