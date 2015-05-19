@@ -12,7 +12,7 @@ default: &default
 development:
   adapter: postgresql
   host: localhost
-  username: user
+  username: today-is-the-day-flatiron-007
   <<: *default
   database: db/development.sqlite3
 

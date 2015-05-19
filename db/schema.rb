@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150329185604) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "collections", force: :cascade do |t|
     t.datetime "date"
     t.string   "to_name"
@@ -23,7 +26,6 @@ ActiveRecord::Schema.define(version: 20150329185604) do
 
   create_table "giphy_items", force: :cascade do |t|
     t.datetime "date"
-    t.string   "url"
     t.integer  "collection_id"
   end
 

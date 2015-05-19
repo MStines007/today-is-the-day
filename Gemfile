@@ -25,7 +25,7 @@ gem'wikipedia-client', '~> 1.3.3'
 
 gem 'sanitize'
 
-gem 'giphy', '~> 1.2.0'
+gem 'giphy', '~> 2.0.0'
 
 gem 'figaro'
 
