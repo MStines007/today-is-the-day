@@ -4,7 +4,7 @@ class CollectionsController < ApplicationController
 		@collection = Collection.new
 		render :new
 	end
-
+	
 	def create
 		date = params[:collection][:date]
 
