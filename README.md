@@ -10,16 +10,12 @@ Created in 2015 by Skylar Panuska and Matthew Stines at the Flatiron School in N
 
 ## Usage
 
-Today is the Day! currently runs locally through a Rails server.
+Today is the Day! has been deployed! Try it out at https://today-is-the-day-flatiron-007.herokuapp.com/.
 
 ## Future
 
-Going forward we plan to continue refactoring the code, adding features and refining visual styling. Deployment is also coming.
+Going forward we plan to continue refactoring the code, adding features and refining visual styling.
 
 ## Authors
 
 Skylar Panuska and Matthew Stines
-
-## License
-
-Today is the Day! is MIT Licensed. See LICENSE for details.
