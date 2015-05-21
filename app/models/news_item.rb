@@ -1,9 +1,7 @@
 class NewsItem < ActiveRecord::Base
 
 	require 'open-uri'
-
 	belongs_to :collection
-
 	attr_reader :response_hash
 
 # ----- CLASS METHODS
