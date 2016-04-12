@@ -21,7 +21,7 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 # Wiki client
-gem'wikipedia-client', '~> 1.3.3'
+gem'wikipedia-client', '~> 1.6.2'
 
 gem 'sanitize'
 
